@@ -29,16 +29,19 @@ class Animation {
   }
 
   drawGoalPost() {
-      this.ctx.fillStyle = "#000000";
+      this.ctx.fillStyle = "#007958";
       this.ctx.fillRect(700, 470, 5, 100);
 
-      this.ctx.strokeStyle = "#000000";
-      this.ctx.lineWidth = 2;
+      this.ctx.strokeStyle = "#007958";
+      this.ctx.lineWidth = 1;
       this.ctx.beginPath();
       for (let i = 0; i <= 9; i++) {
           this.ctx.moveTo(705, 470 + i * 10);
+          
           this.ctx.lineTo(730 + i * 10, 570);
+          
       }
+   
       this.ctx.moveTo(700, 570);
       this.ctx.lineTo(800, 571);
       this.ctx.stroke();
@@ -48,13 +51,13 @@ class Animation {
       this.ctx.save();
       this.ctx.translate(this.ballX, this.ballY);
 
-      this.ctx.fillStyle = "#FFFF00";
+      this.ctx.fillStyle = "#cb7d87";
       this.ctx.beginPath();
       this.ctx.rotate(this.rotationAngle * Math.PI / 180);
       this.ctx.arc(0, 0, 10, Math.PI, 0, false);
       this.ctx.fill();
 
-      this.ctx.fillStyle = "#FF0000";
+      this.ctx.fillStyle = "#F3F315";
       this.ctx.beginPath();
       this.ctx.rotate(Math.PI);
       this.ctx.arc(0, 0, 10, Math.PI, 0, false);
@@ -64,19 +67,20 @@ class Animation {
   }
 
   drawPerson() {
-      this.ctx.fillStyle = "#000000";
+    //this.ctx.lineWidth = 15;
+      this.ctx.fillStyle = "#1470cf";
 
       if (!this.kicked && this.ballX < 700) {
           this.personX += 0.5;
       }
 
       this.ctx.beginPath();
-      this.ctx.arc(this.personX + 25, this.personY - 20, 10, 0, Math.PI * 2);
+      this.ctx.arc(this.personX + 25, this.personY - 6, 10, 0, Math.PI * 2);
       this.ctx.fill();
-
+      this.ctx.lineWidth = 3.0;
       this.ctx.fillRect(this.personX + 20, this.personY - 10, 10, 40);
 
-      this.ctx.strokeStyle = "#000000";
+      this.ctx.strokeStyle = "#1470cf";
       this.ctx.beginPath();
       this.ctx.moveTo(this.personX + 20, this.personY + 5);
       this.ctx.lineTo(this.personX + 10, this.personY + 20);

@@ -7,9 +7,9 @@ class Animation {
       this.canvas.style.backgroundRepeat = "no-repeat";
       this.ctx = this.canvas.getContext('2d');
 
-      this.ballX = 150;
+      this.ballX = 350;
       this.ballY = 540;
-      this.personX = 50;
+      this.personX = 250;
       this.personY = 500;
       this.kicking = false;
       this.kicked = false;
@@ -30,17 +30,17 @@ class Animation {
 
   drawGoalPost() {
       this.ctx.fillStyle = "#000000";
-      this.ctx.fillRect(500, 450, 5, 100);
+      this.ctx.fillRect(700, 470, 5, 100);
 
       this.ctx.strokeStyle = "#000000";
       this.ctx.lineWidth = 2;
       this.ctx.beginPath();
       for (let i = 0; i <= 9; i++) {
-          this.ctx.moveTo(505, 450 + i * 10);
-          this.ctx.lineTo(530 + i * 10, 550);
+          this.ctx.moveTo(705, 470 + i * 10);
+          this.ctx.lineTo(730 + i * 10, 570);
       }
-      this.ctx.moveTo(500, 550);
-      this.ctx.lineTo(600, 551);
+      this.ctx.moveTo(700, 570);
+      this.ctx.lineTo(800, 571);
       this.ctx.stroke();
   }
 
@@ -121,9 +121,9 @@ class Animation {
           this.ballY -= vy;
           this.rotationAngle += 5;
 
-          if (this.ballX >= 500) {
-              this.personX = 50;
-              this.ballX = 150;
+          if (this.ballX >= 700) {
+              this.personX = 250;
+              this.ballX = 350;
               this.ballY = 540;
               this.kicked = false;
               this.kicking = false;
